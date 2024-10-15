@@ -36,7 +36,7 @@ public class Sidebar {
                 parentClicked = true;
                 System.out.println("Clicked on parent: " + parentName);
 
-                // If a child name is provided, search and click the child item
+                
                 if (childName != null && !childName.isEmpty()) {
                     List<WebElement> children = parent.findElements(By.xpath(".//ul/li"));
                     boolean childClicked = false;
