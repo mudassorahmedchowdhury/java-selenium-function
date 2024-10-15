@@ -26,7 +26,12 @@ public class Sidebar {
             throw new IllegalArgumentException("Parent name cannot be null or empty");
         }
 
-        List<WebElement> parents = driver.findElements(By.xpath("//div[@class='left-bar hidden-print']//ul/li"));
+
+
+        //Adjust with your xpath
+        List<WebElement> parents = driver.findElements(
+                By.xpath("//div[@class='left-bar hidden-print']//ul/li"));
+
         boolean parentClicked = false;
 
         for (WebElement parent : parents) {
@@ -36,7 +41,7 @@ public class Sidebar {
                 parentClicked = true;
                 System.out.println("Clicked on parent: " + parentName);
 
-                // If a child name is provided, search and click the child item
+
                 if (childName != null && !childName.isEmpty()) {
                     List<WebElement> children = parent.findElements(By.xpath(".//ul/li"));
                     boolean childClicked = false;
